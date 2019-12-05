@@ -10,26 +10,18 @@ class Teashop implements Shop {
     List<Coconut> coconut = new ArrayList<>();
     public void imports(Ingredient ingredient){
         if(ingredient instanceof Bubble){
-            addin((Bubble) ingredient);
+            bubble.add((Bubble) ingredient);
         }
         if(ingredient instanceof Coconut){
-            addin((Coconut) ingredient);
+            coconut.add((Coconut) ingredient);
         }
     }
-    private void addin(Bubble bubble1){
-        bubble.add(bubble1);
-    }
-    private void addin(Coconut coconut1){
-        coconut.add(coconut1);
-    }
-
     public void sale(String name,String string){
         int year1;
         int month1;
         int day1;
         try{
             Calendar calendar=Calendar.getInstance();
-
             if(string == "Bubble"){
                 if (!bubble.isEmpty()) {
                     for (int i=0;i<bubble.size();i++) {
